@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://shayko1.github.io/amazing-smile-clinic/sitemap.xml
+Sitemap: https://doctorhalp.com/sitemap.xml
