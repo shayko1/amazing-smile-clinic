@@ -437,7 +437,7 @@
     <div class="sec-head center reveal">
       <span class="eyebrow">צרו קשר</span>
       <h2>קבעו פגישת ייעוץ — ללא עלות וללא התחייבות</h2>
-      <p>השאירו פרטים ונחזור אליכם בהקדם, או פשוט הרימו טלפון. אנחנו כאן.</p>
+      <p>הדרך המהירה ביותר ליצירת קשר היא שיחת טלפון — אנחנו כאן בשבילכם, מסביב לשעון.</p>
     </div>
     <div class="contact-grid">
       <div class="contact-info reveal">
@@ -461,33 +461,16 @@
           <iframe title="מפת המרפאה — חולון" loading="lazy" src="https://www.google.com/maps?q=%D7%99%D7%94%D7%95%D7%A9%D7%A2%20%D7%97%D7%A0%D7%A7%D7%99%D7%9F%2034%20%D7%97%D7%95%D7%9C%D7%95%D7%9F&output=embed"></iframe>
         </div>
       </div>
-      <form class="cform reveal" id="cform" novalidate>
-        <div class="finner">
-          <h3>השאירו פרטים</h3>
-          <p class="fhint">נחזור אליכם בהקדם האפשרי. למקרי חירום — עדיף להתקשר ישירות.</p>
-          <div class="row2">
-            <div class="field"><label for="name">שם מלא</label><input id="name" name="name" type="text" placeholder="השם שלכם" required></div>
-            <div class="field"><label for="phone">טלפון</label><input id="phone" name="phone" type="tel" placeholder="050-0000000" required></div>
-          </div>
-          <div class="field"><label for="subject">סוג הפנייה</label>
-            <select id="subject" name="subject">
-              <option>כאב / חירום</option>
-              <option>קביעת תור לבדיקה</option>
-              <option>אסתטיקה והבהרה</option>
-              <option>שתלים ושיקום</option>
-              <option>טיפול לילדים</option>
-              <option>אחר</option>
-            </select>
-          </div>
-          <div class="field"><label for="msg">הודעה</label><textarea id="msg" name="msg" rows="4" placeholder="ספרו לנו במה נוכל לעזור"></textarea></div>
-          <button type="submit" class="btn btn-primary btn-lg">שליחת הפנייה</button>
-        </div>
-        <div class="ok" id="formOk">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M8 12l3 3 5-6"/></svg>
-          <b>הפנייה נשלחה!</b>
-          <span>תודה — נחזור אליכם בהקדם. למקרה דחוף חייגו 054-7575654.</span>
-        </div>
-      </form>
+      <div class="contact-cta reveal" style="background:linear-gradient(150deg,var(--blue-deep,#0f4a80),var(--blue,#1a6fb5));border-radius:22px;padding:38px 32px;color:#fff;display:flex;flex-direction:column;justify-content:center;gap:18px;box-shadow:0 20px 50px rgba(15,74,128,.25)">
+        <span style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;opacity:.92"><svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>זמינים 24 שעות ביממה · גם בשבת</span>
+        <h3 style="font-family:var(--head,inherit);font-size:clamp(24px,3.4vw,32px);line-height:1.25;margin:0">צריכים אותנו עכשיו?<br>הרימו טלפון — אנחנו עונים.</h3>
+        <p style="margin:0;opacity:.9;line-height:1.7">נשמח לענות על כל שאלה, לקבוע תור, או לתת הצעת מחיר ברורה — ללא עלות וללא התחייבות. למקרי חירום, שיחה היא הדרך המהירה ביותר לקבל מענה.</p>
+        <a href="tel:0547575654" class="btn btn-call btn-lg" style="align-self:flex-start">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1 1 .4 1.9.7 2.8a2 2 0 01-.5 2.1L8.1 9.9a16 16 0 006 6l1.3-1.3a2 2 0 012.1-.4c.9.3 1.8.6 2.8.7a2 2 0 011.7 2z"/></svg>
+          חייגו עכשיו · 054-7575654
+        </a>
+        <a href="mailto:doctorhalp@gmail.com" class="ltr" style="color:#fff;opacity:.85;font-weight:600;text-decoration:underline">או שלחו לנו אימייל: doctorhalp@gmail.com</a>
+      </div>
     </div>
   </div>
 </section>
@@ -577,19 +560,6 @@ document.querySelectorAll('.hours-table .row').forEach(row => {
     if (!time.classList.contains('em')) time.insertAdjacentHTML('afterend', '<span class="nowtag">היום</span>');
     else { const tag = document.createElement('span'); tag.className='nowtag'; tag.textContent='היום'; row.appendChild(tag); }
   }
-});
-
-// contact form
-document.getElementById('cform').addEventListener('submit', (e) => {
-  e.preventDefault();
-  const name = document.getElementById('name');
-  const phone = document.getElementById('phone');
-  if (!name.value.trim() || !phone.value.trim()) {
-    [name, phone].forEach(f => { if (!f.value.trim()) { f.style.borderColor = 'var(--emergency)'; } });
-    return;
-  }
-  document.querySelector('#cform .finner').style.display = 'none';
-  document.getElementById('formOk').style.display = 'block';
 });
 </script>
 </body>
