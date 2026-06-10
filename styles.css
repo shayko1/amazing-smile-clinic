@@ -256,6 +256,63 @@ section.block { padding: 96px 0; }
 }
 @media (max-width: 900px){ .about-grid { grid-template-columns: 1fr; gap: 60px; } .about-media { max-width: 380px; } .about .creds { grid-template-columns: 1fr; } }
 
+/* ===================== CREDO (אני מאמינה) ===================== */
+.credo { position: relative; overflow: hidden; background: #fff; }
+.credo::before {
+  content: ""; position: absolute; inset: 0; z-index: 0;
+  background:
+    radial-gradient(50% 70% at 92% 0%, #e3f5f4 0%, rgba(227,245,244,0) 60%),
+    radial-gradient(46% 64% at 4% 100%, #e0eef9 0%, rgba(224,238,249,0) 58%);
+}
+.credo .wrap { position: relative; z-index: 1; }
+.credo-head { max-width: 900px; margin: 0 auto 46px; text-align: center; }
+.credo-head .eyebrow { justify-content: center; }
+.credo-lead {
+  font-family: var(--display); font-size: clamp(26px, 3.4vw, 40px); font-weight: 700;
+  line-height: 1.34; color: var(--blue-deep); margin-top: 18px; text-wrap: balance;
+}
+.credo-lead .mark { color: var(--teal); }
+.credo-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 22px; }
+.creed {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 32px 28px; position: relative; transition: transform .2s, box-shadow .2s;
+}
+.creed:hover { transform: translateY(-5px); box-shadow: var(--sh-md); }
+.creed .num {
+  font-family: var(--display); font-style: italic; font-weight: 700; font-size: 30px;
+  color: var(--teal); line-height: 1; margin-bottom: 14px;
+}
+.creed h3 { font-size: 19.5px; margin-bottom: 9px; }
+.creed h3 em { font-family: var(--display); font-style: italic; color: var(--blue); font-weight: 700; }
+.creed p { color: var(--muted); font-size: 16px; line-height: 1.6; }
+@media (max-width: 880px){ .credo-grid { grid-template-columns: 1fr; max-width: 540px; margin: 0 auto; } }
+
+/* ===================== HOBBIES (מחוץ למרפאה) ===================== */
+.hobbies { background: linear-gradient(180deg, var(--bg-2) 0%, #fff 100%); }
+.hob-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 20px; }
+.hob {
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px 26px; display: flex; align-items: center; gap: 18px;
+  transition: transform .2s, box-shadow .2s, border-color .2s;
+}
+.hob:hover { transform: translateY(-5px); box-shadow: var(--sh-md); border-color: transparent; }
+.hob .ic {
+  width: 60px; height: 60px; flex: none; border-radius: 17px; background: var(--teal-soft);
+  color: var(--blue); display: grid; place-items: center; transition: background .2s, color .2s;
+}
+.hob:hover .ic { background: var(--blue); color: #fff; }
+.hob .ic svg { width: 30px; height: 30px; }
+.hob b { font-family: var(--head); font-weight: 700; font-size: 17.5px; color: var(--blue-deep); display: block; line-height: 1.25; }
+.hob span { font-size: 14px; color: var(--muted); }
+.hob-note {
+  margin: 34px auto 0; max-width: 760px; text-align: center; background: #fff;
+  border: 1px dashed #cfe0ee; border-radius: var(--radius-sm); padding: 22px 28px;
+  font-size: 17px; color: var(--ink); line-height: 1.6;
+}
+.hob-note b { font-family: var(--head); color: var(--blue); font-weight: 700; }
+@media (max-width: 880px){ .hob-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 560px){ .hob-grid { grid-template-columns: 1fr; } }
+
 /* ===================== VALUES ===================== */
 .values { background: var(--blue-deep); color: #fff; }
 .values .sec-head h2 { color: #fff; } .values .sec-head p { color: #a9c5d9; } .values .eyebrow { color: var(--teal); }
@@ -397,7 +454,3 @@ section.block { padding: 96px 0; }
 .js .reveal.in { opacity: 1; transform: none; }
 @media print { .reveal { opacity: 1 !important; transform: none !important; } }
 @media (prefers-reduced-motion: reduce){ .js .reveal { opacity: 1; transform: none; transition: none; } .hero-badge .dot, .fab-call { animation: none; } html { scroll-behavior: auto; } }
-
-/* hobby grid — balanced 3x2 layout */
-.hobby-grid{grid-template-columns:repeat(3,1fr)}
-@media (max-width:600px){.hobby-grid{grid-template-columns:repeat(2,1fr)}}
