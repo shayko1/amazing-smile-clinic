@@ -397,3 +397,7 @@ section.block { padding: 96px 0; }
 .js .reveal.in { opacity: 1; transform: none; }
 @media print { .reveal { opacity: 1 !important; transform: none !important; } }
 @media (prefers-reduced-motion: reduce){ .js .reveal { opacity: 1; transform: none; transition: none; } .hero-badge .dot, .fab-call { animation: none; } html { scroll-behavior: auto; } }
+
+/* hobby grid — balanced 3x2 layout */
+.hobby-grid{grid-template-columns:repeat(3,1fr)}
+@media (max-width:600px){.hobby-grid{grid-template-columns:repeat(2,1fr)}}
