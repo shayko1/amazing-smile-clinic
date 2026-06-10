@@ -18,6 +18,8 @@
   --line:        #e0ebf3;
   --emergency:   #e8463c;
   --emergency-soft:#fdecea;
+  --call:        #17a44b;
+  --call-600:    #138a3e;
   --gold:        #c89b4a;
 
   /* type */
@@ -70,8 +72,8 @@ img { display: block; max-width: 100%; }
   white-space: nowrap;
 }
 .btn svg { width: 19px; height: 19px; }
-.btn-call { background: var(--emergency); color: #fff; box-shadow: 0 12px 26px -10px rgba(232,70,60,.6); }
-.btn-call:hover { transform: translateY(-2px); box-shadow: 0 18px 34px -10px rgba(232,70,60,.7); }
+.btn-call { background: var(--call); color: #fff; box-shadow: 0 12px 26px -10px rgba(23,164,75,.55); }
+.btn-call:hover { transform: translateY(-2px); background: var(--call-600); box-shadow: 0 18px 34px -10px rgba(23,164,75,.7); }
 .btn-primary { background: var(--blue); color: #fff; box-shadow: 0 12px 26px -12px rgba(26,111,181,.7); }
 .btn-primary:hover { transform: translateY(-2px); background: var(--blue-600); }
 .btn-ghost { background: #fff; color: var(--blue-deep); border: 1.5px solid var(--line); }
@@ -431,14 +433,18 @@ section.block { padding: 96px 0; }
 @media (max-width: 480px){ .footer-grid { grid-template-columns: 1fr; } }
 
 /* ===================== FLOATING CALL (mobile) ===================== */
+/* Full-width sticky "call now" bar — thumb-zone, high-conversion (mobile/tablet) */
 .fab-call {
-  position: fixed; inset-inline-end: 18px; bottom: 18px; z-index: 90; display: none;
-  background: var(--emergency); color: #fff; width: 60px; height: 60px; border-radius: 50%;
-  align-items: center; justify-content: center; box-shadow: 0 14px 30px -8px rgba(232,70,60,.7);
-  animation: pulse 2s infinite;
+  position: fixed; inset-inline: 14px; bottom: 14px; z-index: 90; display: none;
+  background: var(--call); color: #fff; height: 58px; border-radius: 16px;
+  align-items: center; justify-content: center; gap: 11px;
+  font-family: var(--head); font-weight: 700; font-size: 18px;
+  box-shadow: 0 12px 30px -8px rgba(23,164,75,.6);
 }
-.fab-call svg { width: 27px; height: 27px; }
-@media (max-width: 1040px){ .fab-call { display: flex; } }
+.fab-call svg { width: 24px; height: 24px; }
+.fab-call .fab-label { line-height: 1; }
+.fab-call .fab-label bdi { direction: ltr; }
+@media (max-width: 1040px){ .fab-call { display: flex; } body { padding-bottom: 86px; } }
 
 /* tame decorative overhangs on small screens (no edge bleed) */
 @media (max-width: 560px){
@@ -446,6 +452,22 @@ section.block { padding: 96px 0; }
   .hero-media .float-card { inset-inline-start: 6px; }
   .about-media .deco { inset-inline-start: -10px; top: -12px; width: 84px; height: 84px; }
   .about-media .ribbon { inset-inline-end: -6px; }
+}
+
+/* ===================== MOBILE POLISH (spacing · tap targets · readability) ===================== */
+@media (max-width: 640px){
+  .wrap { padding: 0 20px; }
+  section.block { padding: 62px 0; }
+  .hero { padding: 46px 0 64px; }
+  .hero .lead { font-size: 18px; }
+  /* full-width, stacked CTAs = bigger tap targets in the thumb zone */
+  .hero .cta-row { gap: 12px; }
+  .hero .cta-row .btn { width: 100%; }
+  /* declutter the top bar — the sticky bottom call bar covers calling */
+  .header .hd-cta .btn-call { display: none; }
+  .header .wrap { gap: 14px; height: 70px; }
+  html { scroll-padding-top: 80px; }
+  .sec-head { margin-bottom: 36px; }
 }
 
 /* ===================== REVEAL ANIMATION ===================== */
