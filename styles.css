@@ -352,6 +352,19 @@ section.block { padding: 96px 0; }
 .gal-grid .gtxt span { font-size: 15px; opacity: .9; margin-top: 6px; }
 @media (max-width: 760px){ .gal-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; } .gal-grid .g1 { grid-row: span 1; grid-column: span 2; aspect-ratio: 16/9; } .gal-grid .g { min-height: 180px; } }
 
+/* before/after results gallery (real cases) */
+.ba-grid { column-count: 3; column-gap: 18px; }
+.ba { break-inside: avoid; margin: 0 0 18px; background: #fff; border: 1px solid var(--line); border-radius: 16px; overflow: hidden; box-shadow: var(--sh-sm); }
+.ba img { width: 100%; height: auto; display: block; }
+.ba .cap { padding: 13px 16px; font-family: var(--head); font-weight: 600; font-size: 14.5px; color: var(--blue-deep); display: flex; align-items: center; gap: 9px; flex-wrap: wrap; }
+.ba .cap .tag { font-size: 11px; font-weight: 700; color: #fff; background: var(--teal); padding: 4px 9px; border-radius: 100px; }
+.ba-txt { background: linear-gradient(150deg, var(--teal) 0%, var(--blue) 100%); color: #fff; padding: 34px 26px; display: flex; flex-direction: column; justify-content: center; min-height: 160px; }
+.ba-txt b { font-family: var(--head); font-weight: 800; font-size: 28px; line-height: 1.1; }
+.ba-txt span { font-size: 15px; opacity: .92; margin-top: 6px; }
+.ba-consent { text-align: center; color: var(--muted); font-size: 13.5px; margin-top: 24px; }
+@media (max-width: 900px){ .ba-grid { column-count: 2; } }
+@media (max-width: 560px){ .ba-grid { column-count: 1; } }
+
 /* ===================== FAQ ===================== */
 .faq-wrap { max-width: 860px; margin: 0 auto; }
 .faq { border: 1px solid var(--line); border-radius: var(--radius-sm); background: #fff; margin-bottom: 13px; overflow: hidden; transition: box-shadow .2s, border-color .2s; }
