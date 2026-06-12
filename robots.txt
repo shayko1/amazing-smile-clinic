@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://doctorhalp.com/sitemap.xml
+Sitemap: https://doctorhalp.co.il/sitemap.xml
